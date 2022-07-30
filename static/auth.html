@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <script src="/js/auth.js"></script>
+</head>
+
+<body id="body_auth">
+    <div id="form_login">
+        <input id="form_login_nik" placeholder="nik" type="text">
+        <input id="form_login_pwd" placeholder="pwd" type="password">
+        <p><input type="submit" value="логин" onclick="login()"></p>
+    </div>
+    <div id="form_register" hidden>
+        <input id="form_register_nik" placeholder="nik" type="text">
+        <input id="form_register_pwd" placeholder="pwd" type="password">
+        <p><input type="submit" value="регистрация" onclick="register()"></p>
+    </div>
+    <p id="response"></p>
+</body>

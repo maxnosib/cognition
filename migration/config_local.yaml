@@ -1,0 +1,16 @@
+migration_storage:
+  storage_type: "postgres"
+  dsn: "postgres://postgres:postgres@localhost:54320/cognition?sslmode=disable"
+  schema: "public"
+  path: "data/migrations.db"
+
+projects:
+  project1:
+    migrations:
+    - postgres: ./migration
+  
+databases:
+  postgres:
+    type: postgres
+    dsn: "postgres://postgres:postgres@localhost:54320/cognition?sslmode=disable"
+    schema: "public"

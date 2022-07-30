@@ -1,0 +1,49 @@
+version: "3"
+services:
+  db_cognition: # название сервиса
+    # название контейнера
+    container_name: db_cognition
+    # использыемый образ контейнера
+    image: "postgres:13.2-alpine"
+    hostname: psqldb_cognition
+    # даем разрешение на перезапуск контейнера после его остановки
+    # restart: always
+    # создаем перменные среды
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=cognition
+    # пробрасываем порты наружу host:container
+    ports:
+      - "54320:5432"
+    # пробрасываем папку для сохранения файлов бд
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    # указываем сеть которая между контейнерами
+    networks:
+      - net_cognition
+
+  app_cognition: 
+    # название контейнера
+    container_name: app_cognition
+    build: .
+    image: cognition:v1
+    # указываем сеть которая между контейнерами
+    networks:
+      - net_cognition
+    # пробрасываем порты наружу host:container
+    ports:
+      - "8080:8080"
+    # обозначаем зависимость от контейнера db
+    # т.е. этот контейнер запуститься после запуска db
+    depends_on:
+      - db_cognition
+
+# перечисляем все volumes которые используем
+volumes:
+  pgdata:
+
+# перечисляем все networks которые используем
+networks:
+  net_cognition:
+    external: true

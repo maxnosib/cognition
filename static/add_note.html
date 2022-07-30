@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить записку</title>
+    <script src="/js/check.js"></script>
+    <script src="/js/add_note.js"></script>
+</head>
+
+<body id="body_add_note">
+    <div id="form_add_note">
+        <p>Выберите 1 категорию</p>
+        <select id="form_add_note_category" required></select>
+        <p>Является ли эта карточка первой в векторе</p>
+        <input type="checkbox" id="form_add_note_is_first" name="Первая карточка в векторе">
+        <p>Введите описание</p>
+        <textarea id="form_add_note_description" placeholder="Описание" type="text" required></textarea>
+        <p>Введите ссылки (id) на другие заметки через запятую</p>
+        <input id="form_add_note_links" placeholder="ссылка1,ссылка2" type="text">
+        <p>Введите теги через запятую</p>
+        <input id="form_add_note_tags" placeholder="тег1,тег2" type="text" required>
+        <p>Введите ссылки на ресурсы</p>
+        <textarea id="form_add_note_sources" placeholder="Ресурсы" type="text"></textarea>
+        <p><input type="submit" value="Добавить записку" onclick="add_note()"></p>
+    </div>
+    <p id="response"></p>
+</body>

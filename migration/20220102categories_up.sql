@@ -1,0 +1,1 @@
+CREATE TYPE categories AS ENUM ('знания', 'мысли', 'архив', 'заметки');

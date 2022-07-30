@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить записку</title>
+    <script src="/js/check.js"></script>
+    <script src="/js/add_tag.js"></script>
+</head>
+
+<body id="body_add_tag">
+    <div id="form_add_tag">
+        <p>Введите название тега</p>
+        <input id="form_add_tag_tag" placeholder="ссылка1,ссылка2" type="text">
+        <p>Введите описание</p>
+        <textarea id="form_add_tag_description" placeholder="Описание" type="text" required></textarea>
+        <p><input type="submit" value="Добавить тег" onclick="add_tag()"></p>
+    </div>
+    <p id="response"></p>
+</body>
